@@ -1,8 +1,17 @@
-import React from "react";
-
+import React,{ useContext } from "react";
+import { useState } from "react";
 import GeneralContext from "./GeneralContext";
-
 import { watchlist } from "../data/data";
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUp from '@mui/icons-material/KeyboardArrowUp';
+import BarChartOutlined from '@mui/icons-material/BarChartOutlined';
+import MoreHoriz from '@mui/icons-material/MoreHoriz';
+import Tooltip from '@mui/material/Tooltip';
+import Grow from '@mui/material/Grow';
+
+
+
+
 
 const WatchList = () => {
   return (
