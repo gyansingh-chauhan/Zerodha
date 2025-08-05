@@ -47,6 +47,7 @@ code {
   padding: 10px 20px;
   border-radius: 2px;
   color: #fff;
+  
   margin-right: 2px;
   margin-left: 2px;
 }
@@ -842,5 +843,10 @@ hr {
   background-color: rgb(212, 212, 212);
 }
 
-
+/* #pop-outer #pop-inner div >Link:hover{
+  color: #74a7fa;
+  font-size: 1.2em;
+}
+ */
+ 
 
