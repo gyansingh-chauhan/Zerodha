@@ -6,6 +6,7 @@ const PORT=process.env.PORT ||3002;
 const url=process.env.MONGO_URL;
 const {HoldingModel}=require("./models/HoldingModel");
 const {PositionModel}=require("./models/PositionModel");
+const {OrderModel}=require("./models/OrderModel");
 
 const bodyParser=require("body-parser");
 const cors=require("cors");
@@ -193,6 +194,20 @@ app.get("/",async (req,res)=>{
  app.get("/allPositions",async (req,res)=>{
     let allPosition=await PositionModel.find({});
     res.json(allPosition);
+ })
+ app.get("/allOrder",async(req,res)=>{
+  let allOrder=await OrderModel.find({});
+  res.json(allOrder);
+ })
+ app.post("/newOrder",async(req,res)=>{
+  let newOrder=new OrderModel({
+    name:req.body.name,
+    qty:req.body.qty,
+    price:req.body.price,
+    mode:"BUY",
+  });
+    newOrder.save();
+    res.send("Order saved ");
  })
 app.listen(PORT,()=>{
     console.log("app started");
