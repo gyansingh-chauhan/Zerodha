@@ -1,9 +1,8 @@
 import React,{useState} from "react";
-import { useNavigate } from 'react-router-dom';
-function SignUp() {
-    const [mobileNumber,setMobileNumber]=useState("");
-    const navigate = useNavigate();
-    const divLoginStyle = {
+
+function OtpPage() {
+   
+  const divLoginStyle = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -15,22 +14,9 @@ function SignUp() {
     height: "35px",
     borderRadius: "2%",
   };
-  const handleOnChange=(e)=>{
-    setMobileNumber(e.target.value);
-  }
 
- const handleOnClick=()=>{
-  if(mobileNumber.length===10){
-    navigate('/otpPage');
-  }
-  else{
-    if(mobileNumber.length===0){
-        alert("You have not Entered number");
-    }
-    else{
-    alert("Number is not valid");
-    }}
-};
+
+const [optNumber,setOtpNumber]=useState(0);
   return (
     <div className="container">
       <div className="row m-5">
@@ -39,21 +25,21 @@ function SignUp() {
         </div>
         <div style={divLoginStyle} className="col-5 ">
           <div className="">
-            <h1 className="mt-4 mb-4 ">Signup Now</h1>
+            <h1 className="mt-4 mb-4 ">Enter OTP </h1>
             <p className="text-muted">or track your existing application</p>
             <label className="text-muted" htmlFor="mobile-number">
-              Mobile-Number
+              Enter-OTP
             </label>
             <br></br>
-           {/*  <form action={'/otpPage'}> */}
-            <input type="text" onChange={handleOnChange} value={mobileNumber} style={inputStyle} className="" />
+
+            <input  style={inputStyle} className="" />
+
             <p className="mt-3" style={{ fontSize: "13px" }}>
               you will receive OTP on entered number
             </p>
-            <button onClick={handleOnClick} style={{ width: "30%" }} className="btn btn-primary">
+            <button style={{ width: "30%" }} className="btn btn-primary">
               Continue
             </button>
-           {/*  </form> */}
           </div>
         </div>
         <p className="text-muted text-center mt-5" style={{ fontSize: "13px" }}>
@@ -66,4 +52,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default OtpPage;

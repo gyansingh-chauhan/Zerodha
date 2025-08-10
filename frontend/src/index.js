@@ -11,6 +11,7 @@ import PricingPage from './landing_page/pricing/PricingPage';
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFindingPage from './landing_page/NotFindingPage';
+import OtpPage from './landing_page/signup/OtpPage';
 
 
 
@@ -27,6 +28,7 @@ root.render(
         <Route path="/product" element={<ProductsPage/>}/>
         <Route path="/pricing" element={<PricingPage/>}/>
         <Route path='*' element={<NotFindingPage/>}/>
+        <Route path='/otpPage' element={<OtpPage/>}/>
     </Routes>
     <Footer/>
  </BrowserRouter>
